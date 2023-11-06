@@ -41,3 +41,18 @@ def adder4(A, B):
     return Cout, S
 
 print(adder4(A=[1, 0, 0, 1], B=[1, 1, 1, 0]))
+
+def mini1(x,y) :
+    if x+0.5 >y :
+        return 1
+    else :
+        return 0
+    return y
+def min2(x,y) :
+    if x-0.5 < y :
+        return 1
+    else :
+        return 0
+    return y
+
+print(AND(mini1(0,1),min2(0,1)))
