@@ -30,7 +30,6 @@ class Function:
 
         print(f'x = {self.x} 일 때, f1_forward(x) = ',self.fun1.foward(self.x))
         print(f'f2_foward(x)= {self.fun2.foward(z)}')
-
         print('f1_backword(x) = ', self.fun1.backward(a))
 
 fun1 = Function(5)

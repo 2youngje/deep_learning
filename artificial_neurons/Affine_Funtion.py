@@ -8,5 +8,6 @@ class AffineFuntion:
         z = np.dot(self.w,x)+self.b
         return z
 
+
 affine1 = AffineFuntion(w=[1,-1],b=-1.5)
 affine2 = AffineFuntion(w=[-1,-1],b=0.5)
