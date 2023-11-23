@@ -18,4 +18,6 @@ ax.imshow(img,cmap='gray')
 ax.tick_params(left=False,labelleft=False,
                bottom=False, labelbottom=False)
 
+#sobel
+
 plt.show()
