@@ -1,5 +1,4 @@
 from torchsummary import summary
-
 import torch.cuda
 from torchvision.datasets import MNIST
 from torchvision.transforms import ToTensor
@@ -16,7 +15,7 @@ class VGG13(nn.Module):
         self.conv = nn.Sequential(
             nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3, padding=1, stride=1),
             nn.ReLU(),
-            nn.Conv2d(in_channels=3, out_channels=64, kernel_size=3, padding=1, stride=1),
+            nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, padding=1, stride=1),
             nn.ReLU(),
             nn.MaxPool2d(kernel_size=2, stride=2),
 
@@ -54,7 +53,7 @@ class VGG13(nn.Module):
         )
 
         self.classifier = nn.Sequential(
-            nn.Linear(in_features=25088, out_features=4096),
+            nn.Linear(in_features=512*7*7, out_features=4096),
             nn.ReLU(),
 
             nn.Linear(in_features=4096, out_features=4096),
@@ -80,6 +79,4 @@ vn = VGG13()
 
 a = vn.forward(input_tensor)
 
-
-model = VGG13()
-summary(model, input_size=(3,224,224))
+print(a.shape)
